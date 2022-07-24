@@ -5,6 +5,7 @@ int main(int argc, char **argv)
 {
     int number = 0;
     int dim = 0;
+    printf("SYD\n");
     FILE *file = fopen("./syd.txt", "r");
     if (NULL == file)
     {
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
     }
     fseek(file, 0, SEEK_END);
     int line = (int)ftell(file);
-   // printf ("%d\n", line);
+    printf ("%d\n", line);
     char *str = (char*)malloc(line + 1);
     while (number <= line)
     {
@@ -26,14 +27,9 @@ int main(int argc, char **argv)
         printf ("%d\n",dim);
         printf ("%s\n", str);
         number += dim;
+        
     }
-    //printf("%s\n", str);
+    printf ("\n");
     fclose(file);
-
-
-    // char *p = "GHJAHBASSHJJHA";
-    // char *q = "GHJAHBASSHJJHA";
-    // printf ("%s\n", p);
-    // printf("%d\n", strcmp(q, p));
     return 0;
 }
